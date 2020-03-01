@@ -1,0 +1,20 @@
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Age</th>
+        <th>Gender</th></tr>
+    
+</table>
+<div *ngFor="let user of list">
+<table>
+    <tr>
+    <td>{{user.name}} </td> 
+    <td>{{user.username | uppercase}} </td>
+    <td> {{user.age }} </td> 
+    <td>{{user.gender }}</td>
+</tr>
+</table>
+
+</div>
