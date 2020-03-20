@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {FormlyBootstrapModule} from '@ngx-formly/bootstrap';
 import { UserlistComponent } from './userlist/userlist.component';
+import { GenderPipe } from './gender.pipe';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -20,7 +22,8 @@ import { UserlistComponent } from './userlist/userlist.component';
     UsercreateComponent,
     UsereditComponent,
     PagenotfoundComponent,
-    UserlistComponent
+    UserlistComponent,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { UserlistComponent } from './userlist/userlist.component';
     FormlyBootstrapModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

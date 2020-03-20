@@ -1,19 +1,27 @@
 
 <table>
     <tr>
+        <th>S.No</th>
         <th>Name</th>
         <th>UserName</th>
         <th>Age</th>
-        <th>Gender</th></tr>
+        <th>Gender</th>
+        <th>Actions</th>
+    </tr>
     
 </table>
-<div *ngFor="let user of list">
+<div *ngFor="let user of users; index as i">
 <table>
     <tr>
-    <td>{{user.name}} </td> 
-    <td>{{user.username | uppercase}} </td>
-    <td> {{user.age }} </td> 
-    <td>{{user.gender }}</td>
+        <td>{{i + 1}}</td>
+    <td>{{user.CandidateName}} </td> 
+    <td>{{user.UserName | uppercase}} </td>
+    <td> {{user.Age }} </td> 
+    <td>{{user.Gender | gender }}</td>
+    <td> <button class="btn btn-danger" (click)="OnDelete(user)" style="margin-right: 30px">Remove</button> 
+        <button class="btn btn-primary" (click)="onEdit(user)">Edit</button>
+    <!-- <a style="margin-left: 20 px" [routerLink]="['/useredit/{user.i}']" routerLinkActive="active" >Edit</a> -->
+        </td>
 </tr>
 </table>
 

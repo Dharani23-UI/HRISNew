@@ -9,7 +9,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 const routes: Routes = [
   { path: '', redirectTo: '/usercreate', pathMatch: 'full' },
   { path: 'usercreate', component: UsercreateComponent },
-  { path: 'useredit', component: UsereditComponent },
+  { path: 'useredit/:id', component: UsereditComponent },
   { path: 'userlist', component: UserlistComponent },
   { path: "**", component: PagenotfoundComponent },
 

@@ -1,0 +1,35 @@
+{
+  "Users": [
+    {
+      "UserName": "abhi01",
+      "CandidateName": "abhijith",
+      "Gender": 1,
+      "Age": 23,
+      "Name": "abhijith",
+      "id": 1
+    },
+    {
+      "UserName": "Bsmani01",
+      "CandidateName": "Balasubramani",
+      "Gender": 1,
+      "Age": 29,
+      "Name": "Balasubramani",
+      "id": 2
+    },
+    {
+      "UserName": "dharani01",
+      "CandidateName": "dharanidharan",
+      "Gender": 1,
+      "Age": 26,
+      "Name": "dharanidharan",
+      "id": 3
+    },
+    {
+      "UserName": "ddni01",
+      "CandidateName": "dhidharan",
+      "Gender": 1,
+      "Age": 76,
+      "id": 4
+    }
+  ]
+}

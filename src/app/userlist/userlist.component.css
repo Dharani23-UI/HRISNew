@@ -2,7 +2,7 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: 4px solid black ;
-    width: 50%;
+    width: 100%;
     color: black;
 
   }
@@ -11,14 +11,14 @@ table {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    width: 25%;
+    width: 15%;
     color: green;
   }
   th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    width: 25%;
+    width: 15%;
     color: rgb(15, 119, 15);
   }
   

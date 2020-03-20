@@ -3,25 +3,29 @@ import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { userStoreService } from '../userstore.service';
 import { CandidateName } from '../app.module';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-usercreate',
   templateUrl: './usercreate.component.html',
   styleUrls: ['./usercreate.component.css'],
-  providers:[userStoreService]
+  providers: [userStoreService]
 })
 export class UsercreateComponent implements OnInit {
-  constructor(private userstore:userStoreService) { }
+  data: any;
+  constructor(private userstore: userStoreService, private httpclient: HttpClient) { }
   form = new FormGroup({});
-  model = { UserName:'',
-            CandidateName:'',
-            Gender:'',
-            Age:'' };
+  model = {
+    UserName: '',
+    CandidateName: '',
+    Gender: '',
+    Age: ''
+  };
   fields: FormlyFieldConfig[] = [
     {
       key: 'UserName',
       type: 'text',
-  
+
       templateOptions: {
         type: 'text',
         label: 'UserName',
@@ -32,10 +36,10 @@ export class UsercreateComponent implements OnInit {
         validation: ['UserName'],
       }
     },
-  {
+    {
       key: 'CandidateName',
       type: 'text',
-  
+
       templateOptions: {
         type: 'text',
         label: 'Name',
@@ -49,7 +53,7 @@ export class UsercreateComponent implements OnInit {
     {
       key: 'Gender',
       type: 'select',
-  
+
       templateOptions: {
         type: 'text',
         label: 'SelectGender',
@@ -64,28 +68,33 @@ export class UsercreateComponent implements OnInit {
           label: 'Female'
         }]
       }
-    }, 
+    },
     {
       key: 'Age',
       type: 'input',
-  
+
       templateOptions: {
-  
+
         label: 'Age',
-        type:'number',
+        type: 'number',
         placeholder: 'Enter Age',
         required: true,
-  
+
       },
-  
+
     }
   ];
 
   ngOnInit() {
   }
-  onSubmit( model ) {
-  
-    this.userstore.setuser(model);
-    
+  onSubmit(model) {
+    this.httpclient.post('/api/users',
+      { ...model, Name: model.CandidateName }
+    ).subscribe(data => {
+      this.model;
+    })
+
+    //this.userstore.setuser(model);
+
   }
 }
